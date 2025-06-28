@@ -1,0 +1,85 @@
+.card {
+  border: 1px solid #dfcefd79;
+  border-radius: 8px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  &__main {
+    background: linear-gradient(
+      25deg,
+      rgba(216, 191, 255, 1) 25%,
+      rgb(213 105 170) 100%
+    );
+    position: relative;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition: background .8s ease-in-out;
+  }
+  &__info {
+    padding: 1rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
+    &__title {
+      margin: 0;
+      color: rgb(213 105 170);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      transition: color 0.3s ease-in-out;
+      &:hover {
+        color: #dfcefd; /* Change color on hover */
+        cursor: pointer;
+      }
+    }
+  }
+  &__content {
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #dfcefd;
+    line-height: 1.5;
+   
+   
+  }
+}
+
+.card__image {
+  padding: 1rem 3rem;
+
+  /* Positions images on top of each other */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+
+  /* --- THE MAGIC PART: CSS TRANSITION --- */
+  transition: opacity 0.6s ease-in-out; /* Smooth transition for opacity over 0.5 seconds */
+  /* You can adjust the duration (0.5s) and timing function (ease-in-out) */
+  &__original {
+    opacity: 1; /* Original image is fully visible by default */
+  }
+  &__hover {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+   
+  }
+}
+
+.card-image.hover {
+  opacity: 0;
+}
+
+/* State on hover: Original image hidden, hover image visible */
+.hidden {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}

@@ -1,0 +1,57 @@
+.circle {
+  border-radius: 50%;
+  width: 10vw;
+  height: 10vw;
+  overflow: hidden;
+  z-index: 1;
+  border: 2px solid #dfcefd7c;
+  background: transparent;
+  backdrop-filter: blur(5px);
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  //position: absolute;
+  transition: all 0.3s ease-in-out;
+  &--first {
+    place-self: start;
+  }
+  &--second {
+    place-self: center;
+  }
+  &--third {
+    place-self: start;
+  }
+
+  &:hover {
+    border: 2px solid #efe7fc86;
+    backdrop-filter: initial;
+    animation: float 3s infinite linear;
+    width: 9vw;
+    height: 9vw;
+  }
+  &:hover .circle__text {
+    color: #efe7fc;
+  }
+  &__text {
+    font-family: 'Oranienbaum', serif;
+    font-size: 1.5rem;
+    z-index: 1;
+    transition: all 0.3s ease-in-out;
+    color: #dfcefd;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(8px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}

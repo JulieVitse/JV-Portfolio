@@ -1,0 +1,124 @@
+.about {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  &__wrapper {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: flex-start;
+    /* &__title{
+      font-family: 'Oranienbaum', serif;
+      text-transform: initial;
+      font-size: 5vw;
+      margin-bottom: 1rem;
+    } */
+    &__description {
+      font-family: 'Oranienbaum', serif;
+      font-size: 1.5vw;
+      animation: fadeIn 1s ease-in-out forwards;
+      opacity: 0;
+      &:nth-child(3) {
+        animation-delay: 0.5s;
+      }
+      &:nth-child(4) {
+        animation-delay: 1s;
+      }
+      &:nth-child(5) {
+        animation-delay: 1.5s;
+      }
+    }
+  }
+}
+
+.faded {
+  opacity: 0;
+  animation: none;
+}
+
+.link{
+  color: white;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    color: #c572df;
+  }
+}
+
+/* .about_title {
+  font-family: 'Oranienbaum', serif;
+  text-transform: initial;
+  font-size: 5vw;
+  margin-bottom: 1rem;
+} */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.picWrapper {
+  width: 450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.profilePic {
+  width: 100%;
+  border-radius: 50%;
+  border-bottom: 5px solid #000000;
+}
+
+.speechBubble {
+  position: relative;
+  left: -1rem;
+  top: -21rem;
+  display: flex;
+  align-items: center;
+  color: #15072b;
+  font-family: 'Roboto Mono', monospace;
+  transition: all 0.3s ease-in-out;
+  &__text {
+    margin-left: .5rem;
+    z-index: 1;
+  }
+  &__img {
+    position: absolute;
+    height: 60px;
+    width: 230px;
+  }
+}
+
+.hovered {
+  opacity: 1;
+}
+
+/* .speechBubble::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 20px solid transparent;
+  border-left-color: white;
+  border-right: 0;
+  border-bottom: 0;
+  margin-left: 158px;
+  margin-top: 20px;
+} */
