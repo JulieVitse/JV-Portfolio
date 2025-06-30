@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { useEffect } from 'react'
+
 import Card from '../../components/Card/Card'
 
 import QuizKMockup from '../../assets/quizk.png'
@@ -16,6 +18,9 @@ import ahsMockup2 from '../../assets/ahs2.png'
 import styles from './Works.module.scss'
 
 export default function Works() {
+  useEffect(() => {
+    document.title = 'Julie Vitse | Projects'
+  }, [])
   return (
     <div className={styles.works}>
       <h2 className={styles.works__title}>Projects</h2>

@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import { useEffect } from 'react'
 import styles from './WorkDetail.module.scss'
 
 import quizkMockup from '../../assets/quizk.png'
@@ -7,7 +8,6 @@ import projectNoiseMockup from '../../assets/projectNoise.png'
 import portfolioMockup from '../../assets/jvportfolio.png'
 import homergeMockup from '../../assets/homerge1.png'
 import ahsMockup from '../../assets/ahs.png'
-
 
 import sportseeSS from '../../assets/ss_sportsee.png'
 import modalSS from '../../assets/ss_modal.png'
@@ -18,9 +18,6 @@ import homergePresentation from '../../assets/HomeRGE_Pres.pdf'
 import ahsPdf from '../../assets/DOSSIER_AHS.pdf'
 
 import { Link } from 'react-router-dom'
-
-
-
 
 const githubLink = 'https://github.com/JulieVitse?tab=repositories'
 
@@ -133,6 +130,8 @@ const projects = [
 ]
 
 export default function WorkDetail(): JSX.Element {
+  
+
   // Use useParams to get the project title from the URL
   const { projectName } = useParams<{ projectName: string }>()
   // Convert the projectName to a title format (e.g., "home-rge" to "HomeRGE")
@@ -142,6 +141,11 @@ export default function WorkDetail(): JSX.Element {
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ')
     : ''
+
+  // Set the document title to the project title
+  useEffect(() => {
+    document.title = `Julie Vitse | ${title || 'Project Detail'}`
+  }, [title])
   // If no title is provided, return a default message
   if (!title) {
     return (
@@ -154,6 +158,8 @@ export default function WorkDetail(): JSX.Element {
   const project = projects.find(
     (proj) => proj.title.toLowerCase() === title.toLowerCase()
   )
+
+  
 
   if (project) {
     return (

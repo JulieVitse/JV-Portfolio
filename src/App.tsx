@@ -2,10 +2,13 @@ import './App.scss'
 import { MainButton } from './components/MainButton/MainButton'
 import { FaGithub } from 'react-icons/fa'
 import { FaLinkedin } from 'react-icons/fa'
+import { useEffect } from 'react'
 
 function App() {
-
-  
+  // Set the document title to "Julie Vitse | Portfolio"
+  useEffect(() => {
+    document.title = 'Julie Vitse | Front-End Developer Portfolio'
+  }, [])
   return (
     <div className="App">
       <div className="wrapper">

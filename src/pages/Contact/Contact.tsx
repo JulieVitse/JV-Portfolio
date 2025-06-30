@@ -1,6 +1,11 @@
 import styles from './Contact.module.scss'
+import { useEffect } from 'react'
 
 export function Contact() {
+    // Set the document title to "Contact"
+    useEffect(() => {
+        document.title = 'Julie Vitse | Contact'
+    }, [])
   return (
     <section className={styles.contact}>
       <h2 className={styles.contact__title}>Talk to me!</h2>

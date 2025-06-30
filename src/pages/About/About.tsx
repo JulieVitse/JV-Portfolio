@@ -5,7 +5,12 @@ import speechBubble from '../../assets/speech.png'
 import styles from './About.module.scss'
 import { Link } from 'react-router-dom'
 
+
 export function About() {
+  // Set the document title to "About"
+  useEffect(() => {
+    document.title = 'Julie Vitse | About'
+  }, [])
   const [isVisible, setIsVisible] = useState(false)
 
   const [randomString, setRandomString] = useState('Hey there!')
