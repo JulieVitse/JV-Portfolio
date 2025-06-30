@@ -14,7 +14,7 @@ export function About() {
     const interval = setInterval(() => {
       const strings = [
         'Hey there!',
-        'Welcome to my page!',
+        'Welcome!',
         "That's me!",
         "I'm Julie!",
         'Nice to meet you!',
@@ -44,25 +44,11 @@ export function About() {
           wrapper="h1"
           cursor={true}
           style={{
-            fontFamily: 'Oranienbaum',
-            textTransform: 'initial',
-            fontSize: '5vw',
-            marginBottom: '1rem',
+            fontFamily: 'Oranienbaum, serif',
           }}
           speed={70}
+          className={styles.about__wrapper__title}
         />
-        {/* {isVisible && (
-          <p className={styles.about__wrapper__description}>
-            I'm a young front-end developer, currently working mainly with React
-            and its ecosystem. <br />
-            With a keen eye for design and a love for crafting user-friendly
-            interfaces, I thrive on bringing ideas to life through clean and
-            efficient code. <br />
-            My main focus for any project I work on is for the end product,
-            whether it be a website or application, to be as easy of use, fast,
-            and efficient as possible.
-          </p>
-        )} */}
 
         {isVisible ? (
           <>
@@ -115,9 +101,6 @@ export function About() {
           src={profilePic}
           alt=""
           className={styles.profilePic}
-          /* onMouseEnter={handleHover}
-          onMouseLeave={handleMouseLeave}
-          onClick={handleHover} */
         />
 
         <div className={styles.speechBubble}>

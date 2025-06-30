@@ -4,6 +4,7 @@
   width: 100%;
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #dfcefd28;
   &__main {
     background: linear-gradient(
       25deg,
@@ -28,20 +29,23 @@
       font-family: 'Poppins', sans-serif;
       font-weight: 500;
       transition: color 0.3s ease-in-out;
+      font-size: 1.6rem;
       &:hover {
         color: #dfcefd; /* Change color on hover */
         cursor: pointer;
       }
     }
+    &__details{
+        color: #dfcefd;
+    }
   }
   &__content {
-    padding: 1rem;
+    padding: 0 1rem;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     color: #dfcefd;
     line-height: 1.5;
-   
-   
+    margin-bottom: 1rem;
   }
 }
 

@@ -1,7 +1,7 @@
 import styles from './Card.module.scss'
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { i } from 'motion/react-client'
+import { Link } from 'react-router-dom'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type CardProps = {
@@ -34,7 +34,8 @@ export default function Card({
 
   return (
     <AnimatePresence>
-      <div
+      <Link
+        to={`/works/${name.toLowerCase().replace(/\s+/g, '-')}`}
         className={styles.card}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -63,7 +64,7 @@ export default function Card({
 
         {/* <img src={HomeRgeMockup} alt="Project Mockup" /> */}
         {/* Uncomment the above line to display an image if needed */}
-      </div>
+      </Link>
     </AnimatePresence>
   )
 }

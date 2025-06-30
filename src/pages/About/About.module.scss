@@ -1,26 +1,49 @@
+@import '../../styles/variables.scss';
 .about {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
   position: relative;
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+  }
   &__wrapper {
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
     align-items: baseline;
     justify-content: flex-start;
-    /* &__title{
+    @include mobile {
+      flex-basis: initial;
+      order: 1;
+    }
+    &__title{
       font-family: 'Oranienbaum', serif;
       text-transform: initial;
       font-size: 5vw;
-      margin-bottom: 1rem;
-    } */
+      margin-bottom: 1rem;    
+      @include mobile {
+        font-size: 9vw;
+      }
+      @include tablet {
+        font-size: 3rem;
+      }
+    }
     &__description {
       font-family: 'Oranienbaum', serif;
-      font-size: 1.5vw;
+      font-size: 2vw;
       animation: fadeIn 1s ease-in-out forwards;
       opacity: 0;
+      @include mobile {
+        font-size: 5vw;
+      }
+      @include tablet {
+        font-size: 1.2rem;
+      }
       &:nth-child(3) {
         animation-delay: 0.5s;
       }
@@ -47,13 +70,6 @@
   }
 }
 
-/* .about_title {
-  font-family: 'Oranienbaum', serif;
-  text-transform: initial;
-  font-size: 5vw;
-  margin-bottom: 1rem;
-} */
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -79,6 +95,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  @include mobile {
+    width: 65%;
+    order: 0;
+    align-self: flex-end;
+  }
 }
 .profilePic {
   width: 100%;
@@ -95,6 +116,14 @@
   color: #15072b;
   font-family: 'Roboto Mono', monospace;
   transition: all 0.3s ease-in-out;
+  @include mobile {
+    left: -7rem;
+    top: -10rem;
+  }
+  @include mobile-med {
+    left: -5rem;
+    top: -15rem;
+  }
   &__text {
     margin-left: .5rem;
     z-index: 1;
@@ -109,16 +138,3 @@
 .hovered {
   opacity: 1;
 }
-
-/* .speechBubble::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 20px solid transparent;
-  border-left-color: white;
-  border-right: 0;
-  border-bottom: 0;
-  margin-left: 158px;
-  margin-top: 20px;
-} */

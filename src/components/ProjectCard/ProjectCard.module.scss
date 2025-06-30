@@ -8,9 +8,7 @@
     background-color: #dfcefd33;
 
   }
-  /* &__main:hover {
-    background-color: #dfcefd33;
-  } */
+
   &__main {
     display: grid;
     grid-template-columns: 1fr repeat(2, 1fr);

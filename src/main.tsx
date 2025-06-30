@@ -6,6 +6,7 @@ import { About } from './pages/About/About'
 import Works from './pages/Works/Works'
 import Root from './pages/Root/Root'
 import { Contact } from './pages/Contact/Contact'
+import WorkDetail from './pages/WorkDetail/WorkDetail'
 import './index.scss'
 
 const router = createBrowserRouter([
@@ -17,6 +18,7 @@ const router = createBrowserRouter([
       { path: 'about', element: <About /> },
       { path: 'works', element: <Works /> },
       { path: 'contact', element: <Contact /> },
+      { path: 'works/:projectName', element: <WorkDetail /> }, // Dynamic route for project details
     ],
   },
   /*  {

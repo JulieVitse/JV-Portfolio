@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .circle {
   border-radius: 50%;
   width: 10vw;
@@ -13,13 +15,19 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  //position: absolute;
   transition: all 0.3s ease-in-out;
+  @include tablet {
+    width: 15vw;
+    height: 15vw;
+  }
   &--first {
     place-self: start;
   }
   &--second {
     place-self: center;
+    @include tablet {
+      place-self: end;
+    }
   }
   &--third {
     place-self: start;
